@@ -2,7 +2,7 @@ COMANDO KUBERNETES
 
 kubectl run <name-pod> --image=<image-name>:<version>
 
-kubectl apply -f <path-file>
+kubectl apply -f <path-file> --record=true
 kubectl delete -f <path-file>
 
 kubectl exec -it <name-pod> -- bash
@@ -26,3 +26,9 @@ kubectl get node -o wide --watch
 kubectl get replicaset
 kubectl get rs
 kubectl get rs -o wide --watch
+
+kubectl get deployment
+kubectl get deployment -o wide --watch
+kubectl rollout history deployment <deployment-name>
+kubectl annotate deployment <deployment-name> kubernetes.io/change-cause="texto"
+kubectl rollout undo deployment <deployment-name> --to-revision=<numero>
