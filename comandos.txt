@@ -6,6 +6,7 @@ kubectl apply -f <path-file> --record=true
 kubectl delete -f <path-file>
 
 kubectl exec -it <name-pod> -- bash
+kubectl exec -it <name-pod> --container <nome-container> -- bash
 
 kubectl get pods
 kubectl get pods -o wide --watch
